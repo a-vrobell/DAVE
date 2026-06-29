@@ -13,7 +13,7 @@ Official implementation of **DAVE**, an attribution method for Vision Transforme
 Clone the repository and install dependencies. All commands below assume you are in the repository root.
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/a-vrobell/DAVE
 cd DAVE
 pip install torch torchvision timm kornia numpy scipy pillow pyyaml matplotlib
 ```
@@ -138,16 +138,16 @@ DAVE/
 │   ├── explainer.py          # DAVEExplainer — main attribution API
 │   ├── config.py             # YAML-based model / augment / post-proc config
 │   └── utils/
-│       ├── detach_mode.py    # ViT gradient decomposition (operator variation removal)
-│       ├── augment.py        # Differentiable spatial augmentations + noise
+│       ├── detach_mode.py    # Effective Transformation extraction by Operator Variation removal
+│       ├── augment.py        # Differentiable spatial augmentations + noise for low-pass filtering
 │       ├── post_processing.py
 │       ├── visualization.py
 │       └── ...
 ├── evaluation/
-│   ├── pixel_deletion.py     # Pixel perturbation benchmark
+│   ├── pixel_deletion.py     # Pixel deletion benchmark
 │   └── utils/
 ├── models_configs/           # Per-model YAML configs (timm ViTs)
 ├── attribute_imagenet_sample.ipynb
 ├── attribute_multiclass.ipynb
-└── run_pixel_deletion.sh     # Example evaluation command
+└── run_pixel_deletion.sh     # Example evaluation command for pixel deletion
 ```
